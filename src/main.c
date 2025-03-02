@@ -16,17 +16,25 @@
 /*            (2) ndn_struct.c                                  */
 /*            (3) utils.c                                       */
 /*                                                              */
-/* Autores: MAtilde Augusto - n.º 103204                        */        
+/* Autores: Matilde Augusto - n.º 103204                        */        
 /*          ----- ------ - n.º ------                           */
 /*                                                              */
 /*==============================================================*/
 
 #include <stdio.h>
 #include "ndn_struct.h"
+#include "tcp_server.h"
 
 int main(int argc, char *argv[]) {
-    NdnConfig config = parse_arguments(argc, argv);
+  NdnConfig config = parse_arguments(argc, argv);
 
-    start_tcp_server(&config);
-    return 0;
+  //PARA RETIRAR
+  printf("Cache Size: %d\n", config.cache_size);
+  printf("IP: %s\n", config.ip);
+  printf("TCP Port: %d\n", config.tcp_port);
+  printf("Reg IP: %s\n", config.reg_ip);
+  printf("Reg UDP Port: %d\n", config.reg_udp);
+
+  tcp_server(&config);
+  return 0;
 }

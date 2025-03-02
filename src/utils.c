@@ -26,11 +26,11 @@
  * Descrição: Verifica se uma string representa um número inteiro, percorrendo cada caractere e garantindo que todos são dígitos.
  *****************************************************************************/
 int is_string_integer(const char *str) {
-    if (str == NULL || *str == '\0') return 0;
-    for (int i = 0; str[i] != '\0'; i++) {
-        if (!isdigit((unsigned char)str[i])) return 0;
-    }
-    return 1;
+  if (str == NULL || *str == '\0') return 0;
+  for (int i = 0; str[i] != '\0'; i++) {
+    if (!isdigit((unsigned char)str[i])) return 0;
+  }
+  return 1;
 }
 
 /******************************************************************************
@@ -46,6 +46,6 @@ int is_string_integer(const char *str) {
  * Descrição: Valida um endereço IP utilizando a função inet_pton. Se o endereço for válido, a função retorna 1, caso contrário, retorna 0.
  *****************************************************************************/
 int isValidIpAddress(const char *ip) {
-    struct sockaddr_in sa;
-    return inet_pton(AF_INET, ip, &(sa.sin_addr)) == 1;
+  struct sockaddr_in sa;
+  return inet_pton(AF_INET, ip, &(sa.sin_addr)) == 1;
 }
